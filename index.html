@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head> 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-959995393"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-959995393');
+</script>
+<!-- Event snippet for 提交潜在客户表单 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-959995393/pc39CIPFr-caEIG84ckD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>2025</title>
     <style>
+	 .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 40px; /* 增加按钮的宽度 */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            text-align: center;
+            font-size: 18px; /* 确保文字清晰可见 */
+            white-space: nowrap; /* 防止文字换行 */
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: breathing 2s infinite;
+            transition: background-color 0.3s ease;
+            z-index: 9999; /* 确保按钮在最上层 */
+        }
+        .floating-button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes breathing {
+            0% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.1);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        }
+	
         /* グローバルリセット */
         * {
             margin: 0;
@@ -914,5 +976,8 @@
             console.log('页面点击事件:', e.target.tagName, e.target.className);
         });
     </script>
+	 <button class="floating-button" onclick="t2()">
+       もっと詳しく知る
+    </button>
 </body>
 </html>
